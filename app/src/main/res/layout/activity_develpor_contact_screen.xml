@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DevelporContactScreen">
+
+
+    <ImageView
+        android:id="@+id/ivDevelporPic"
+        android:layout_width="150dp"
+        android:layout_height="350dp"
+        android:src="@drawable/develpor_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Developer Contact"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/ivDevelporPic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/phoneLL"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/ivPhone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/phone"
+            android:layout_marginEnd="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_number"
+            android:textSize="20sp"
+            android:textColor="#FD5CDD17"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/phoneLL"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/ivMail"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mail"
+            android:layout_marginEnd="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="20sp"
+            android:textColor="#FD5CDD17"
+            />
+
+    </LinearLayout>
+
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

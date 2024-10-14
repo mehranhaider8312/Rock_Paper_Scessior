@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Rock Paper Scessior</string>
+    <string name="user_chose_rock">User Chose Rock</string>
+    <string name="user_chose_paper">User Chose Paper</string>
+    <string name="user_chose_scessior">User Chose Scessior</string>
+    <string name="game_chose_rock">Game chose Rock</string>
+    <string name="game_chose_paper">Game chose Paper</string>
+    <string name="game_chose_scessior">Game chose Scessior</string>
+    <string name="loss_result">Sorry!! You Loss</string>
+    <string name="win_result">Hurray!!! You Won</string>
+    <string name="its_a_draw">Its a Draw!!</string>
+    <string name="my_number">03360654125</string>
+    <string name="email">mehranhaider1786@gmail.com</string>
+</resources>
