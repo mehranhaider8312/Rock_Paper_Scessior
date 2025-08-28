@@ -5,80 +5,244 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient_background"
     tools:context=".DevelporContactScreen">
 
+    <!-- Decorative top curve -->
+    <View
+        android:id="@+id/topCurve"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivDevelporPic"
-        android:layout_width="150dp"
-        android:layout_height="350dp"
-        android:src="@drawable/develpor_pic"
+    <!-- Developer Profile Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCard"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Developer Contact"
-        android:gravity="center"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/ivDevelporPic" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/phoneLL"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        >
-
-        <ImageView
-            android:id="@+id/ivPhone"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/phone"
-            android:layout_marginEnd="20dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_number"
-            android:textSize="20sp"
-            android:textColor="#FD5CDD17"
-            />
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:gravity="center">
+
+            <!-- Profile Picture -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                app:cardCornerRadius="70dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/ivDevelporPic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/develpor_pic"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Developer Name -->
+            <TextView
+                android:id="@+id/tvDeveloperName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muhammad Mehran Haider"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FF2C3E50"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/tvDeveloperTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Android Developer"
+                android:textSize="16sp"
+                android:textColor="#FF7F8C8D"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#FF3498DB"
+                android:layout_marginBottom="25dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Contact Section -->
+    <LinearLayout
+        android:id="@+id/contactSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/profileCard">
+
+        <!-- Phone Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/phoneCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardBackgroundColor="#E8F8F5"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/ivPhone"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/phone"
+                        android:layout_gravity="center"
+                        app:tint="#FF27AE60" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone Number"
+                        android:textSize="14sp"
+                        android:textColor="#FF7F8C8D"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_number"
+                        android:textSize="18sp"
+                        android:textColor="#FF2C3E50"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/ivPhoneArrow"
+                    android:src="@drawable/arrow_forward"
+                    app:tint="#BBC2C7" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Email Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/emailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardBackgroundColor="#FDF2E9"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/ivMail"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/mail"
+                        android:layout_gravity="center"
+                        app:tint="#FFE67E22" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Address"
+                        android:textSize="14sp"
+                        android:textColor="#FF7F8C8D"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email"
+                        android:textSize="15sp"
+                        android:textColor="#FF2C3E50"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/ivMailArrow"
+                    android:src="@drawable/arrow_forward"
+                    app:tint="#FFBDC3C7" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/phoneLL"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        >
-
-        <ImageView
-            android:id="@+id/ivMail"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/mail"
-            android:layout_marginEnd="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="20sp"
-            android:textColor="#FD5CDD17"
-            />
-
-    </LinearLayout>
-
-    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

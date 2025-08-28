@@ -5,8 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".SplashScreen">
 
+    <!-- App Title -->
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
@@ -14,48 +16,91 @@
         android:gravity="center"
         android:text="@string/app_name"
         android:fontFamily="sans-serif-black"
-        android:textSize="30sp"
-        android:textColor="#D11414"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32"
-        tools:layout_editor_absoluteX="-66dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
+    <View
+        android:id="@+id/centerPoint"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <!-- Rock Image (starts from left) -->
     <ImageView
         android:id="@+id/ivRockSS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/rock"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/centerPoint"
+        app:layout_constraintTop_toTopOf="@id/centerPoint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        android:layout_marginStart="-100dp" />
 
-    <ImageView
-        android:id="@+id/ivPaperSS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/paper"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
-
+    <!-- Scissors Image (starts from right) -->
     <ImageView
         android:id="@+id/ivScessiorSS"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/scessior"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/centerPoint"
+        app:layout_constraintTop_toTopOf="@id/centerPoint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="-100dp" />
+
+    <!-- Paper Image (stationary in center, appears after collision) -->
+    <ImageView
+        android:id="@+id/ivPaperSS"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/paper"
+        android:scaleType="fitCenter"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@id/centerPoint"
+        app:layout_constraintTop_toTopOf="@id/centerPoint"
+        app:layout_constraintStart_toStartOf="@id/centerPoint"
+        app:layout_constraintEnd_toEndOf="@id/centerPoint" />
+
+    <!-- Impact Effect View -->
+    <View
+        android:id="@+id/impactEffect"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/impact_circle"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@id/centerPoint"
+        app:layout_constraintTop_toTopOf="@id/centerPoint"
+        app:layout_constraintStart_toStartOf="@id/centerPoint"
+        app:layout_constraintEnd_toEndOf="@id/centerPoint" />
+
+    <!-- Loading Text -->
+    <TextView
+        android:id="@+id/tvLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/scessior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
+        android:text="Loading Game..."
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:alpha="0"
+        app:layout_constraintTop_toBottomOf="@id/centerPoint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
